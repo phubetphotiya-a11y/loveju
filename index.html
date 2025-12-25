@@ -41,6 +41,7 @@
       border-radius: 16px;
       margin: 16px auto;
       display: block;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
 
     button {
@@ -65,7 +66,6 @@
       display: none;
     }
 
-    /* หัวใจลอย */
     .heart {
       position: fixed;
       bottom: -20px;
@@ -81,7 +81,6 @@
       100% { transform: translateY(-100vh); opacity: 0; }
     }
 
-    /* หิมะ */
     .snow {
       position: fixed;
       top: -10px;
@@ -107,9 +106,10 @@
   <div class="card">
     <h1>🤓🎄💗</h1>
 
+    <!-- รูปของคุณเอง -->
     <img
-      src="https://i.imgur.com/6Z8bK8B.png"
-      alt="มีมแมวส้ม"
+      src="images.jpg"
+      alt="รูปของเรา"
       class="cat"
     >
 
@@ -131,7 +131,6 @@
       document.getElementById("msg").style.display = "block";
     }
 
-    // หัวใจลอย
     setInterval(() => {
       const heart = document.createElement("div");
       heart.className = "heart";
@@ -142,7 +141,6 @@
       setTimeout(() => heart.remove(), 6000);
     }, 600);
 
-    // หิมะตก
     setInterval(() => {
       const snow = document.createElement("div");
       snow.className = "snow";
