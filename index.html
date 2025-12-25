@@ -2,55 +2,157 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>ถึงจูตะเล้กก</title>
+  <title>ถึงจูตะเล้กก ตัวโหดด 🎄💗</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
-      background: linear-gradient(#ffd6e8, #fff);
+      background: linear-gradient(#ffe6f0, #ffffff);
       font-family: 'Arial', sans-serif;
       text-align: center;
-      padding: 50px;
+      padding: 24px;
+      overflow: hidden;
     }
-    h1 {
-      color: #ff4d88;
-    }
+
     .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      max-width: 500px;
+      background: #fff;
+      padding: 28px 20px;
+      border-radius: 24px;
+      max-width: 420px;
       margin: auto;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+      position: relative;
+      z-index: 2;
     }
+
+    h1 {
+      color: #e63973;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .cat {
+      width: 180px;
+      border-radius: 16px;
+      margin: 16px auto;
+      display: block;
+    }
+
     button {
-      background: #ff4d88;
+      background: #e63973;
       color: white;
       border: none;
-      padding: 12px 20px;
-      border-radius: 30px;
+      padding: 14px 26px;
+      border-radius: 999px;
       font-size: 16px;
       cursor: pointer;
       margin-top: 20px;
     }
-    button:hover {
-      background: #ff1f6a;
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    #msg {
+      margin-top: 18px;
+      font-size: 18px;
+      color: #e63973;
+      display: none;
+    }
+
+    /* หัวใจลอย */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 18px;
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 0; }
+      20% { opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    /* หิมะ */
+    .snow {
+      position: fixed;
+      top: -10px;
+      font-size: 14px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      to { transform: translateY(100vh); }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 26px; }
+      p { font-size: 16px; }
     }
   </style>
 </head>
+
 <body>
 
   <div class="card">
-    <h1>🤓🤓🤓 💕</h1>
+    <h1>🤓🎄💗</h1>
+
+    <img
+      src="https://i.imgur.com/6Z8bK8B.png"
+      alt="มีมแมวส้ม"
+      class="cat"
+    >
+
     <p>
-      สุขสันต์วันคริสต์มาส ค้าบบ 
-      จูแมวส้มมน่ารักจัง
+      สุขสันต์วันคริสต์มาสค้าบบบ 🎅🎄<br>
+      จูแมวส้มมน่ารักเกินอ้อนนๆ <br>
+      คิดถึงอ่าาานั่งทำอันนี้ไปด้วยยยทำมาให้จู
     </p>
 
-    <button onclick="alert(' 😎ให้💖รับสิ ')">
-      กดนี้
-    </button>
+    <button onclick="showLove()">จูกดนี่สิ 🎁</button>
 
-    <p style="margin-top:30px;">จากคนที่รักเธอมากๆ</p>
+    <div id="msg">😎 ให้ 💖 รับไปเลยยย~</div>
+
+    <p style="margin-top:28px;">จากตัวตึง</p>
   </div>
+
+  <script>
+    function showLove() {
+      document.getElementById("msg").style.display = "block";
+    }
+
+    // หัวใจลอย
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "💗";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (16 + Math.random() * 20) + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }, 600);
+
+    // หิมะตก
+    setInterval(() => {
+      const snow = document.createElement("div");
+      snow.className = "snow";
+      snow.innerText = "❄️";
+      snow.style.left = Math.random() * 100 + "vw";
+      snow.style.animationDuration = (4 + Math.random() * 4) + "s";
+      document.body.appendChild(snow);
+      setTimeout(() => snow.remove(), 8000);
+    }, 500);
+  </script>
 
 </body>
 </html>
